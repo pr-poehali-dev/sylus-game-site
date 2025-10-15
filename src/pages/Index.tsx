@@ -7,24 +7,24 @@ import Icon from '@/components/ui/icon';
 const skins = [
   {
     id: 1,
-    name: 'Default Sylus',
-    description: 'Классический образ загадочного героя',
+    name: 'Классический Sylus',
+    description: 'Элегантный образ с кошачьими ушками',
     unlocked: true,
-    image: 'https://v3b.fal.media/files/b/rabbit/_tQ1mJuRo7ngE-Fhseuk3_output.png'
+    image: 'https://cdn.poehali.dev/files/389e001a-1a30-4cea-9a6a-ad623de382f3.jpg'
   },
   {
     id: 2,
-    name: 'Shadow Operative',
-    description: 'Тактический костюм для секретных операций',
+    name: 'Костюм Динозавра',
+    description: 'Милый чиби в костюме маленького динозаврика',
     unlocked: true,
-    image: 'https://v3b.fal.media/files/b/rabbit/_tQ1mJuRo7ngE-Fhseuk3_output.png'
+    image: 'https://cdn.poehali.dev/projects/3ad4f3d5-e9af-49a9-bb6a-6ca07a4cc204/files/66c6c933-7172-4ee0-8fb1-b00debebf52e.jpg'
   },
   {
     id: 3,
-    name: 'Crimson Commander',
-    description: 'Боевая форма командира элитного отряда',
+    name: 'Костюм Медвежонка',
+    description: 'Уютный образ плюшевого мишки',
     unlocked: false,
-    image: 'https://v3b.fal.media/files/b/rabbit/_tQ1mJuRo7ngE-Fhseuk3_output.png'
+    image: 'https://cdn.poehali.dev/projects/3ad4f3d5-e9af-49a9-bb6a-6ca07a4cc204/files/49ed78f5-2f1f-45bf-9e44-100efb943137.jpg'
   }
 ];
 
@@ -134,7 +134,7 @@ export default function Index() {
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-primary/10"></div>
                 
                 <div
-                  className="absolute w-20 h-20 transition-all duration-100 ease-linear"
+                  className="absolute w-24 h-24 transition-all duration-100 ease-linear"
                   style={{
                     left: `${playerPosition.x}%`,
                     top: `${playerPosition.y}%`,
@@ -142,11 +142,11 @@ export default function Index() {
                   }}
                 >
                   <div className="relative">
-                    <div className="absolute inset-0 bg-primary/20 rounded-full blur-xl"></div>
+                    <div className="absolute inset-0 bg-primary/20 blur-xl"></div>
                     <img 
                       src={selectedSkin.image} 
                       alt={selectedSkin.name}
-                      className="relative w-full h-full object-cover rounded-full border-2 border-primary shadow-lg shadow-primary/50"
+                      className="relative w-full h-full object-contain drop-shadow-2xl"
                     />
                   </div>
                 </div>
@@ -183,11 +183,11 @@ export default function Index() {
                   }`}
                   onClick={() => skin.unlocked && setSelectedSkin(skin)}
                 >
-                  <div className="relative aspect-[3/4]">
+                  <div className="relative aspect-square bg-gradient-to-br from-card to-secondary/50 flex items-center justify-center">
                     <img 
                       src={skin.image} 
                       alt={skin.name}
-                      className={`w-full h-full object-cover ${!skin.unlocked ? 'grayscale opacity-40' : ''}`}
+                      className={`w-3/4 h-3/4 object-contain ${!skin.unlocked ? 'grayscale opacity-40' : ''}`}
                     />
                     {!skin.unlocked && (
                       <div className="absolute inset-0 flex items-center justify-center bg-background/80 backdrop-blur-sm">
